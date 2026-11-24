@@ -4,8 +4,8 @@
     {
       "name": "entry",
       "path": "modules/entry.js",
-      "sha256": "e28bb9152eede979372d187d25b7653b72ea43d827fb9bd8ca84f5451ef595f5",
-      "bytes": 379,
+      "sha256": "5e8148ae203564c455eb7a5f0cbc072b6e796d385469f70b9ce79b3251046042",
+      "bytes": 394,
       "issue": null,
       "author": {
         "login": "clubroomjp",
