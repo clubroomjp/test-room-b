@@ -120,6 +120,18 @@
         "id": 104341796
       },
       "adoptedAt": "2026-11-24T16:57:31.936Z"
+    },
+    {
+      "name": "v-swap",
+      "path": "modules/v-swap.js",
+      "sha256": "8078d4da118fdf1c55dae579e6552c4ec503d2d56bb9ac4788120714a3e0449f",
+      "bytes": 24,
+      "issue": 18,
+      "author": {
+        "login": "Mats-smsp",
+        "id": 104341796
+      },
+      "adoptedAt": "2026-11-24T16:58:37.007Z"
     }
   ]
 }
