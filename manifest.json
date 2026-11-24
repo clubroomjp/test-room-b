@@ -144,6 +144,18 @@
         "id": 104341796
       },
       "adoptedAt": "2026-11-24T16:59:21.064Z"
+    },
+    {
+      "name": "host-note",
+      "path": "modules/host-note.js",
+      "sha256": "133ab0aa6677f8fb39aadc5a0efb65837b425fc594de1292fe749b5147379ff1",
+      "bytes": 23,
+      "issue": null,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T17:00:45.160Z"
     }
   ]
 }
