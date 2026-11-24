@@ -74,18 +74,6 @@
       "adoptedAt": "2026-11-24T16:55:35.361Z"
     },
     {
-      "name": "v-alpha",
-      "path": "modules/v-alpha.js",
-      "sha256": "997c37bd0c60dfa955c1b4dee28d4fb15323576eb89e9caab1aad55c4f0f74f0",
-      "bytes": 23,
-      "issue": 24,
-      "author": {
-        "login": "Mats-smsp",
-        "id": 104341796
-      },
-      "adoptedAt": "2026-11-24T16:56:30.479Z"
-    },
-    {
       "name": "v-beta",
       "path": "modules/v-beta.js",
       "sha256": "3770b98b45b093e931435b6141e9e8c3d84985ab9a645b687355c433332fff96",
