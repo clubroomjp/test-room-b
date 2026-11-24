@@ -1,0 +1,18 @@
+{
+  "format": 1,
+  "title": "試験用の部屋",
+  "entry": "entry",
+  "surface": "2d",
+  "lib": [
+    {
+      "name": "mini",
+      "path": "lib/mini.js",
+      "sha256": "d7e00578f8c54c5a5f54fa08bedf86cea6f1902c644373249cf5b6f902849170",
+      "bytes": 64
+    }
+  ],
+  "license": "CC0-1.0",
+  "limits": {
+    "codeChars": 24000
+  }
+}

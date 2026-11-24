@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "modules": [
+    {
+      "name": "entry",
+      "path": "modules/entry.js",
+      "sha256": "e28bb9152eede979372d187d25b7653b72ea43d827fb9bd8ca84f5451ef595f5",
+      "bytes": 379,
+      "issue": null,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T00:00:00Z"
+    },
+    {
+      "name": "a",
+      "path": "modules/a.js",
+      "sha256": "6d17db0c09e2c7495821b8e94b3965a7a51d40808e17d78c590e897262b44b72",
+      "bytes": 70,
+      "issue": null,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T00:00:00Z"
+    },
+    {
+      "name": "b",
+      "path": "modules/b.js",
+      "sha256": "792d57a474c94ae34bd55d308e40e76ef34c6558f1f9f0e9ffea66138f9a1870",
+      "bytes": 62,
+      "issue": null,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T00:00:00Z"
+    },
+    {
+      "name": "l",
+      "path": "modules/l.js",
+      "sha256": "59e41875ee25386f55e7f6dc47f08b6f4f2358b903199c53062b8a93e8bbbf5c",
+      "bytes": 64,
+      "issue": null,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T00:00:00Z"
+    }
+  ]
+}
