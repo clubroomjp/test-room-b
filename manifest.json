@@ -72,6 +72,18 @@
         "id": 124767248
       },
       "adoptedAt": "2026-11-24T16:55:14.599Z"
+    },
+    {
+      "name": "with-deps",
+      "path": "modules/with-deps.js",
+      "sha256": "e7ea5b2ae318d3ea24b3c42b116f7fb8489cb464557115db9ff523abe7c2b9e0",
+      "bytes": 74,
+      "issue": 2,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T16:55:35.361Z"
     }
   ]
 }
