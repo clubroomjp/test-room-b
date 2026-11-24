@@ -48,6 +48,18 @@
         "id": 124767248
       },
       "adoptedAt": "2026-11-24T00:00:00Z"
+    },
+    {
+      "name": "renamed",
+      "path": "modules/renamed.js",
+      "sha256": "4b528307d2906c4cd97a1695e09d65b2de6502a7f8a6d4a04c13fdd869b43581",
+      "bytes": 20,
+      "issue": 1,
+      "author": {
+        "login": "clubroomjp",
+        "id": 124767248
+      },
+      "adoptedAt": "2026-11-24T16:54:43.449Z"
     }
   ]
 }
