@@ -108,6 +108,18 @@
         "id": 104341796
       },
       "adoptedAt": "2026-11-24T16:57:23.456Z"
+    },
+    {
+      "name": "v-gamma",
+      "path": "modules/v-gamma.js",
+      "sha256": "9a531c21e74adb9573807bb717c59f68489ddd1f3edecc3f6941c7e03124af23",
+      "bytes": 23,
+      "issue": 26,
+      "author": {
+        "login": "Mats-smsp",
+        "id": 104341796
+      },
+      "adoptedAt": "2026-11-24T16:57:31.936Z"
     }
   ]
 }
