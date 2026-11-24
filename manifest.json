@@ -84,6 +84,18 @@
         "id": 124767248
       },
       "adoptedAt": "2026-11-24T16:55:35.361Z"
+    },
+    {
+      "name": "v-alpha",
+      "path": "modules/v-alpha.js",
+      "sha256": "997c37bd0c60dfa955c1b4dee28d4fb15323576eb89e9caab1aad55c4f0f74f0",
+      "bytes": 23,
+      "issue": 24,
+      "author": {
+        "login": "Mats-smsp",
+        "id": 104341796
+      },
+      "adoptedAt": "2026-11-24T16:56:30.479Z"
     }
   ]
 }
