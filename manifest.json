@@ -132,6 +132,18 @@
         "id": 124767248
       },
       "adoptedAt": "2026-11-24T17:00:45.160Z"
+    },
+    {
+      "name": "v-title-new",
+      "path": "modules/v-title-new.js",
+      "sha256": "1a3a0e61c52982ac102cabc00e97ef122f7be555bfddf4822296fa445780a03f",
+      "bytes": 23,
+      "issue": 20,
+      "author": {
+        "login": "Mats-smsp",
+        "id": 104341796
+      },
+      "adoptedAt": "2026-11-24T17:01:24.651Z"
     }
   ]
 }
