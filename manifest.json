@@ -28,14 +28,14 @@
     {
       "name": "b",
       "path": "modules/b.js",
-      "sha256": "792d57a474c94ae34bd55d308e40e76ef34c6558f1f9f0e9ffea66138f9a1870",
+      "sha256": "372c2bacc4cfe300285280095b89097a0cbb24f156f810c828d3aa1b169c5c8c",
       "bytes": 62,
-      "issue": null,
+      "issue": 23,
       "author": {
-        "login": "clubroomjp",
-        "id": 124767248
+        "login": "Mats-smsp",
+        "id": 104341796
       },
-      "adoptedAt": "2026-11-24T00:00:00Z"
+      "adoptedAt": "2026-11-24T16:55:24.898Z"
     },
     {
       "name": "l",
