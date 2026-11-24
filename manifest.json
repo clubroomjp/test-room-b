@@ -96,6 +96,18 @@
         "id": 104341796
       },
       "adoptedAt": "2026-11-24T16:56:30.479Z"
+    },
+    {
+      "name": "v-beta",
+      "path": "modules/v-beta.js",
+      "sha256": "3770b98b45b093e931435b6141e9e8c3d84985ab9a645b687355c433332fff96",
+      "bytes": 68,
+      "issue": 25,
+      "author": {
+        "login": "Mats-smsp",
+        "id": 104341796
+      },
+      "adoptedAt": "2026-11-24T16:57:23.456Z"
     }
   ]
 }
