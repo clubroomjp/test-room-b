@@ -51,6 +51,8 @@ var LIMIT_RANGES = {
 // packages/protocol/src/digest.ts
 var encoder = new TextEncoder;
 var utf8Bytes = (text) => encoder.encode(text).length;
+// packages/protocol/src/reveal.ts
+var BLANK_LOOKING = new Set(["⠀", "\uD81B\uDFE4", "\uD834\uDD59"]);
 // packages/protocol/src/text.ts
 var ALNUM = "0-9A-Za-z\\uFF10-\\uFF19\\uFF21-\\uFF3A\\uFF41-\\uFF5A";
 var CODE_CHAR = "[0-9A-Z\\uFF10-\\uFF19\\uFF21-\\uFF3A]";

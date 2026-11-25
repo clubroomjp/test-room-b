@@ -1,7 +1,7 @@
 // packages/check/src/emit-main.ts
 import { readFile, stat } from "node:fs/promises";
 // packages/protocol/src/limits.ts
-var NAME_PATTERN = /^[a-z][a-z0-9-]{0,39}$/;
+var NAME_PATTERN = /^(?!(?:con|prn|aux|nul|com[0-9]|lpt[0-9])$)[a-z][a-z0-9-]{0,39}$/;
 var SHA256_PATTERN = /^[0-9a-f]{64}$/;
 var FLOORS = {
   codeChars: 48000,
@@ -38,6 +38,8 @@ var CHECK_CODES = [
   "internal"
 ];
 var isCheckCode = (value) => typeof value === "string" && CHECK_CODES.includes(value);
+// packages/protocol/src/reveal.ts
+var BLANK_LOOKING = new Set(["⠀", "\uD81B\uDFE4", "\uD834\uDD59"]);
 // packages/protocol/src/text.ts
 var ALNUM = "0-9A-Za-z\\uFF10-\\uFF19\\uFF21-\\uFF3A\\uFF41-\\uFF5A";
 var CODE_CHAR = "[0-9A-Z\\uFF10-\\uFF19\\uFF21-\\uFF3A]";

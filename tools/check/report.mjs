@@ -1,5 +1,5 @@
 // packages/protocol/src/limits.ts
-var NAME_PATTERN = /^[a-z][a-z0-9-]{0,39}$/;
+var NAME_PATTERN = /^(?!(?:con|prn|aux|nul|com[0-9]|lpt[0-9])$)[a-z][a-z0-9-]{0,39}$/;
 var SHA256_PATTERN = /^[0-9a-f]{64}$/;
 var FLOORS = {
   codeChars: 48000,
@@ -69,6 +69,7 @@ var CHECK_CODES = [
 ];
 var isCheckCode = (value) => typeof value === "string" && CHECK_CODES.includes(value);
 var isPassing = (code) => code === "ok" || code === "ok-static";
+var MARKER_PATTERN = /^<!-- jamroom-check v1 code=(?<code>[a-z][a-z0-9-]*) sha256=(?<digest>[0-9a-f]{64}|-) name=(?<name>[a-z][a-z0-9-]{0,39}|-) -->$/;
 var MARKER_HEAD = "<!-- jamroom-check v1 code=";
 var MARKER_TAIL = " -->";
 var SHAPE_SEPARATOR = " ";
@@ -79,7 +80,38 @@ var formatMarker = (marker) => {
   const name = marker.name !== null && NAME_PATTERN.test(marker.name) ? marker.name : NAME_ABSENT;
   return `${MARKER_HEAD}${marker.code}${SHAPE_SEPARATOR}sha256=${digest}${SHAPE_SEPARATOR}name=${name}${MARKER_TAIL}`;
 };
+var parseLine = (line) => {
+  const groups = MARKER_PATTERN.exec(line)?.groups;
+  if (groups === undefined)
+    return null;
+  const code = groups["code"];
+  const digest = groups["digest"];
+  const name = groups["name"];
+  if (code === undefined || digest === undefined || name === undefined)
+    return null;
+  if (!isCheckCode(code))
+    return null;
+  return {
+    code,
+    digest: digest === SHA256_ABSENT ? null : digest,
+    name: name === NAME_ABSENT ? null : name
+  };
+};
+var parseMarker = (commentBody) => {
+  let found = null;
+  for (const rawLine of commentBody.split(/\r\n|\r|\n/)) {
+    const marker = parseLine(rawLine.trim());
+    if (marker === null)
+      continue;
+    if (found !== null)
+      return null;
+    found = marker;
+  }
+  return found;
+};
 var BOT_LOGIN = "github-actions[bot]";
+// packages/protocol/src/reveal.ts
+var BLANK_LOOKING = new Set(["⠀", "\uD81B\uDFE4", "\uD834\uDD59"]);
 // packages/protocol/src/text.ts
 var ALNUM = "0-9A-Za-z\\uFF10-\\uFF19\\uFF21-\\uFF3A\\uFF41-\\uFF5A";
 var CODE_CHAR = "[0-9A-Z\\uFF10-\\uFF19\\uFF21-\\uFF3A]";
@@ -213,9 +245,8 @@ var readComment = (value) => {
   const type = user["type"];
   if (typeof login !== "string" || typeof type !== "string")
     return;
-  if (typeof value["body"] !== "string")
-    return;
-  return { id, login, type };
+  const body = value["body"];
+  return { id, login, type, body: typeof body === "string" ? body : null };
 };
 var report = async (input, fetchImpl) => {
   const rawCode = input.code;
@@ -275,8 +306,11 @@ var report = async (input, fetchImpl) => {
     for (let page = 1;page <= PAGES_MAX; page += 1) {
       const { count, entries } = await readPage(`${issueUrl2}/comments?per_page=${PER_PAGE}&page=${page}`);
       for (const entry of entries) {
-        if (entry.login === BOT_LOGIN && entry.type === "Bot")
-          found = entry.id;
+        if (entry.login !== BOT_LOGIN || entry.type !== "Bot")
+          continue;
+        if (entry.body === null || parseMarker(entry.body) === null)
+          continue;
+        found = entry.id;
       }
       if (count < PER_PAGE)
         break;
